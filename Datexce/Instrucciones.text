@@ -1,0 +1,20 @@
+Manual: Cómo cargar un nuevo JSON
+
+Paso 1: Preparar el archivo Excel
+1.1 Verifica que tu archivo Excel esté listo. Asegúrate de que los datos en el archivo estén bien organizados en filas y columnas.
+
+1.2 Guarda el archivo Excel en un formato adecuado. El archivo debe estar en formato .xlsx o .xls (preferiblemente).
+
+
+Paso 2: Agregar el archivo Excel al proyecto
+2.1 Asegúrate de que el archivo esté accesible. El archivo debe estar en una ubicación dentro del proyecto desde donde el sistema pueda acceder a él para la conversión.
+
+2.2 Ubica el archivo Excel en la carpeta Datexce del proyecto.
+
+Paso 3: Agrega la dirección del archivo
+3.1 En la función #2 enumerada en nuestro código JS function handleExcelLoad(), debes ubicar la constante const fileName. Esta constante te permite almacenar la dirección de tu catálogo actualizada. Ejemplo:
+const fileName = 'Datexce/Catálogo 03 de oct. 2024.xlsx';
+
+3.2 Guarda tus cambios en el código, ejecuta index o recarga la página web; si el archivo está correctamente cargado, te tiene que aparecer un alert con el siguiente mensaje:
+
+"¡Archivo cargado!" El archivo " " se cargó correctamente.

@@ -1,0 +1,157 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9; 
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra de navegación */
+nav {
+  background: linear-gradient(to right, #75a1d4, #0e1079);
+  color: white;
+  padding: 10px 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #cce7ff;
+}
+
+/* Footer */
+footer {
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #cce7ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Tarjetas */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+}
+
+/* Texto de tarjeta */
+.card-text {
+  max-height: 4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s ease;
+  color: #333;
+}
+
+.card-text.expanded {
+  max-height: none;
+}
+
+.show-more {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  
+}
+
+
+/* Botones de formulario */
+#sheetSelector {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 9px;
+  border-radius: 4px;
+ 
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+#sheetSelector:hover {
+  background-color: white;
+}
+
+/* Spinner */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Encabezados */
+h1 {
+  animation: fadeIn 1.5s ease;
+  color: #2c3e50;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Dropdown */
+.dropdown-item label {
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.dropdown-item label:hover {
+  background-color: #f8f9fa;
+}
+
+/*Boton WhatsApp*/
+a.btn-primary[href*="wa.me"] {
+  background-color: #25D366;
+  border-color: #1EBE5B;
+  color: rgb(241, 230, 230);
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px 40px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+a.btn-primary[href*="wa.me"]:hover {
+  background-color: #1ca852;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
