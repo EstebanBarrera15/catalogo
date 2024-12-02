@@ -1,11 +1,12 @@
-let workbookGlobal;
+  let workbookGlobal;
+
 
 function handleExcelLoad() {
   const uploadExcel = document.getElementById('uploadExcel');
   const sheetSelector = document.getElementById('sheetSelector');
   uploadExcel.style.display = 'inline-block';
-
-  const fileName = 'Datexce/Catálogo actualizado 12 de noviembre.xlsx';
+ 
+  const fileName = 'Datexce/Catálogo actualizado 12-24.xlsx';
   
   fetch(fileName)
     .then(response => { 
@@ -14,15 +15,8 @@ function handleExcelLoad() {
     })
     .then(data => {    
       const workbook = XLSX.read(data, { type: 'array' });
-      const extractedFileName = fileName.split('/').pop();
+      console.log(`El archivo ${fileName} fue cargado correctamente`);
 
-      Swal.fire({
-        title: '!Archivo cargado!',
-        text: `El archivo "${extractedFileName}" se cargó correctamente`,
-        icon: 'success',
-        showConfirmButton: false,
-        timer: 2500,
-      });
 
       workbookGlobal = workbook;
       sheetSelector.style.display = 'inline-block';
@@ -36,30 +30,17 @@ function handleExcelLoad() {
     })
     .catch(error => {
       console.error('Error al cargar el archivo:', error);
-      swal.fire({
-        title: 'Error al cargar el archivo',
-        text: error.message, 
-        icon: 'error',
-        showConfirmButton: true,
-        confirmButtonText: 'Cómo cargar el archivo correctamente',
-        confirmButtonColor: 'red',
-        timer:10000,
-      }).then((result) => {
-        if (result.isConfirmed) {
-          const url = 'Datexce/Instrucciones.text';
-          const tabName = 'instructionsTab'; 
-          window.open(url, tabName);
-        }
-      });
+     
     });
 }
 
 document.getElementById('uploadExcel').addEventListener('change', (event) => {
   const file = event.target.files[0];
   if (file) {
-    console.log(`Archivo seleccionado: ${file.name}`);
+      console.log(`Archivo seleccionado: ${file.name}`);
   }
 });
+
 
 function handleFile(e) {
   const file = e.target.files[0];
@@ -105,19 +86,19 @@ function loadSheet() {
 function createCardsFromExcel(sheet, data) {
   const output = document.getElementById('output');
   output.innerHTML = '';
-  let rowHtml = '<div class="row">';
+  let rowHtml = '<div class="row">';  
   let cardCount = 0;
 
   for (let rowNum = data.s.r + 1; rowNum <= data.e.r; rowNum++) {
     const productName = sheet[XLSX.utils.encode_cell({ r: rowNum, c: 1 })]; 
     const productValue = productName ? productName.v : 'Sin nombre'; 
 
-    const imageName = sheet[XLSX.utils.encode_cell({ r: rowNum, c: 7 })];  // Suponiendo que la imagen está en la columna 7 (Índice H)
-    const imageUrl = imageName ? `img/${imageName.v}` : 'https://via.placeholder.com/150';  // Ruta de la imagen
+    const imageName = sheet[XLSX.utils.encode_cell({ r: rowNum, c: 7 })]; 
+    const imageUrl = imageName ? `img/${imageName.v}` : 'https://via.placeholder.com/150';  
 
     rowHtml += `  
-      <div class="col-md-4 mt-3">
-        <div class="card" style="width: 18rem;">
+      <div class="col-12 col-sm-6 col-md-4 mb-4"> 
+        <div class="card" style="width: 100%;">
           <img src="${imageUrl}" class="card-img-top" alt="Imagen de producto">
           <div class="card-body"> 
             <h5 class="card-title">${productValue}</h5>
@@ -153,12 +134,13 @@ function createCardsFromExcel(sheet, data) {
 
     cardCount++;
 
+   
     if (cardCount % 3 === 0) {   
-      rowHtml += '</div><div class="row">';
+      rowHtml += '</div><div class="row">'; 
     }
   }
 
-  rowHtml += '</div>';
+  rowHtml += '</div>'; 
   output.innerHTML = rowHtml;
 
   document.querySelectorAll('.show-more').forEach((button, index) => {
@@ -169,6 +151,9 @@ function createCardsFromExcel(sheet, data) {
     });
   });
 }
+
+
+
 window.onload = function() {
   handleExcelLoad();
 };

@@ -4,23 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda Virtual</title>
+  <title>Catálogo #1</title>
   <link rel="icon" href="ico/let.ico" type="image/x-icon">
-  
-  <!-- Cargar bibliotecas necesarias -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-  <link rel="stylesheet" href="styles.css"> <!-- archivo de estilos -->
+  <link rel="stylesheet" href="styles.css"> 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.0/dist/sweetalert2.all.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-light"> 
+<body class="bg-light">
 
- 
-  <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container-fluid"> 
-      <a class="navbar-brand" href="#">
+  <!--Barra de Navegacion-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
         <img src="ico/letra-d.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
         Catálogo de Ventas
       </a>
@@ -28,34 +25,25 @@
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
             <a class="nav-link" href="Start.html">Inicio</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Productos</a>
-          </li>
-
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#"role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Más opciones
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Acción 1</a></li>
               <li><a class="dropdown-item" href="#">Acción 2</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li>
-                <label for="uploadExcel" class="dropdown-item" style="cursor: pointer;">Cargar archivo</label>
-                <input type="file" id="uploadExcel" class="d-none" />
-              </li>
+              <li><a class="dropdown-item" href="#">Algo  más</a></li>
             </ul>
           </li>
         </ul>
-
-        <!-- Selector de productos (oculto inicialmente) -->
         <form class="d-flex">
           <select id="sheetSelector" class="form-control" style="display:none;" onchange="loadSheet()">
             <option value="">Selecciona un Producto</option>
@@ -63,16 +51,145 @@
         </form>
       </div>
     </div>
-  </nav>
-  
-  <!-- Contenedor principal -->
-  <div class="container full-height d-flex justify-content-center align-items-center flex-column">
-    <h1 class="mb-4 text-center">Catálogo de Ventas</h1>
-    <div id="output" class="w-100"></div>
+  </nav><br><br>
+
+ <!--carrusel-->
+ <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active">
+      <a href="Index.html">
+        <img src="./img/AUDIFONOS.jpg" class="d-block w-100" alt="...">
+      </a>
+      <center>
+          <h5>Audifonos zx120</h5>
+        <p>
+          Auriculares cómodos y de alta calidad,
+          con sonido envolvente y diseño ergonómico.
+        </p>
+      </center>
+      </div>
+
+    <div class="carousel-item">
+      <a href="Index.html">
+        <img src="./img/estufa.jpg" class="d-block w-100" alt="...">
+      </a>
+      <center>
+        <h5>Estufa Abba</h5>
+      <p>Estufa Abba, eficiente y compacta, con diseño 
+          moderno y fácil encendido.</p>
+      </center>
+    </div>
+
+    <div class="carousel-item">
+      <a href="Index.html">
+        <img src="./img/sanduchera.jpg" class="d-block w-100" alt="...",>
+      </a>
+      <center>
+        <h5>Sanduchera Kalley N9</h5>
+      <p>Compacta, fácil de limpiar, 
+        antiadherente, luz indicadora y diseño portátil.</p>
+      </center>
+    </div>
+
+    <div class="carousel-item">
+      <a href="Index.html/">
+        <img src="./img/Imagen603.jpg" class="d-block w-100" alt="...",>
+      </a>
+      <center>
+        <h5>Colchon Spring Cassata</h5>
+      <p>Colchón cómodo y resistente, 
+          con tecnología que ofrece soporte óptimo y durabilidad para un descanso reparador.</p>
+        </center>
+    </div>
+
+    <div class="carousel-item">
+      <a href="Index.html"><img src="./img/Imagen525.jpg" class="d-block w-100" alt="...",></a>
+      <center><h5>Silla Rimax</h5>
+        <p>Silla Rimax, ligera, resistente y de diseño versátil, 
+          ideal para interiores y exteriores.</p>
+      </center>
+    </div>
+
+    <div class="carousel-item">
+      <a href="Index.html"> 
+        <img src="./img/Imagen537.jpg" class="d-block w-100" alt="...",>
+      </a>
+      <center><h5>Mesa Rimax</h5>
+        <p>Mesa Rimax de plástico, durable y fácil de mantener,
+           ideal para comedor con diseño moderno y funcional.</p>
+      </center>
+    </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark mt-5" style="background: linear-gradient(to right, #75a1d4, #0e1079);">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+<div class="container full-height d-flex justify-content-center align-items-center flex-column">
+  <h1 class="mb-4 text-center">Bienvenido al Catálogo de Ventas</h1>
+  <p class="text-center">Explora nuestros productos electrónicos y artículos de hogar.</p>
+
+  <div class="text-center">
+    <a href="Index.html" class="btn btn-primary">Ver Productos</a>
+  </div>
+</div><br>
+
+<div class="container">
+  <div class="row">
+    <!-- Tarjeta 1 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="img/Imagen367.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Celular Oppo</h5>
+          <p class="card-text">
+            Dispositivo elegante con pantalla de 6.5" Full HD+, cámara de 48 MP, batería de 4000 mAh, procesador rápido y 128 GB de almacenamiento.
+          </p>
+          <a href="Index.html" class="btn btn-primary">Ver Mas</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="img/Hidro.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Hidro Plus</h5>
+          <p class="card-text">
+            Hidrolavadora potente y compacta, ideal para limpiar a fondo superficies con alta presión y eficiencia.
+          </p>
+          <a href="Index.html" class="btn btn-primary">Ver Mas</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="img/Imagen175.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Ventilador Samurai</h5>
+          <p class="card-text">
+            Ventilador Samurai, potente y silencioso, con diseño
+             moderno y múltiples velocidades para máxima comodidad.
+          </p>
+          <a href="Index.html" class="btn btn-primary">Ver Mas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <footer class="bg-dark mt-5" style="background: linear-gradient(to right, #000000, #00008B);">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -86,13 +203,11 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
- 
-  
+
 </body>
 
 </html>
