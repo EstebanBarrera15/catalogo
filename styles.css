@@ -200,10 +200,16 @@ a.btn-primary[href*="wa.me"]:hover {
   background-color: white; /* Color de las flechas (icono) */
 }
 
-/* Cambiar el color de los iconos al pasar el mouse */
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-  background-color: #007bff; /* Color azul cuando el mouse pasa sobre el icono */
+/* Botones del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10px; /* Ancho reducido */
+  height: 35px; /* Altura reducida */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  border-radius: 10%; /* Forma circular */
+  display: flex;
+  justify-content: justify;
+  align-items: center;
 }
 
 /* Texto de la descripción, si lo agregas */
