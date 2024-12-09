@@ -4,27 +4,16 @@ body {
   margin: 0;
   padding: 0;
 }
-
-
 /* Barra de navegación */
 nav {
   background: linear-gradient(to right, #75a1d4, #0e1079);
-  color: white;
-  padding: 10px 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+   text-decoration: none;
   padding: 8px 12px;
   font-weight: bold;
   transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #cce7ff;
 }
 
 /* Footer */
@@ -33,16 +22,6 @@ footer {
   text-align: center;
   padding: 15px 0;
   margin-top: 20px;
-}
-
-footer a {
-  color: #cce7ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  text-decoration: underline;
 }
 
 /* Tarjetas */
@@ -81,8 +60,6 @@ footer a:hover {
   font-weight: bold;
   
 }
-
-
 /* Botones de formulario */
 #sheetSelector {
   border: none;
@@ -121,19 +98,6 @@ h1 {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Dropdown */
-.dropdown-item label {
-  display: block;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  color: #007bff;
-  font-weight: bold;
-}
-
-.dropdown-item label:hover {
-  background-color: #f8f9fa;
-}
 
 /*Boton WhatsApp*/
 a.btn-primary[href*="wa.me"] {
@@ -143,7 +107,7 @@ a.btn-primary[href*="wa.me"] {
   font-weight: bold;
   border-radius: 10px;
   padding: 10px 40px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  
 }
 
 a.btn-primary[href*="wa.me"]:hover {
@@ -151,105 +115,40 @@ a.btn-primary[href*="wa.me"]:hover {
   transform: scale(1.05);
 }
 
-/* Estilos para el contenedor del carrusel */
+/*Carrusel */
 #carouselExample.carousel {
-  max-width: 1300px !important; /* Ancho máximo */
-  margin: 0 auto !important; /* Centrado horizontal */
-  border: 5px solid #141292; /* Borde alrededor del carrusel */
-  border-radius: 20px; /* Bordes redondeados más pronunciados */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Sombra más fuerte para un efecto flotante */
-  background-color: #ffffff; /* Fondo blanco para destacar las imágenes */
-  overflow: hidden; /* Asegura que nada sobresalga */
-  position: relative;
-  transition: transform 0.5s ease; /* Suaviza la transición al mover el carrusel */
+  max-width: 1300px !important; 
+  border: 2px solid #141292; 
+  border-radius: 10px; 
+  background-color: #def1fd;  
 }
 
-/* Estilo de las imágenes del carrusel */
+/*imágenes del carrusel */
 #carouselExample.carousel img {
-  height: 80px !important; /* Ajusta la altura de las imágenes */
-  object-fit: scale-down !important; /* Ajusta la proporción de las imágenes */
-  transition: transform 0.5s ease; /* Suaviza la transición al cambiar */
+  height: 80px !important; 
+  object-fit: scale-down !important; 
 }
 
-/* Efecto zoom al pasar el mouse sobre las imágenes */
+/*zoom al pasar el mouse sobre las imágenes */
 #carouselExample.carousel img:hover {
-  transform: scale(1.05); /* Amplía ligeramente la imagen */
+  transform: scale(1.05); 
 }
 
-/* Cambiar el color del botón "Previous" */
+/*botón "Previous" */
 .carousel-control-prev {
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
-  border-radius: 10%; /* Hacer los bordes redondeados */
-
-  
-
+  border-radius: 10%; 
 }
 
-.carousel-control-prev-icon {
-  background-color: white; /* Color de las flechas (icono) */
-  
-}
-
-/* Cambiar el color del botón "Next" */
+/*botón "Next" */
 .carousel-control-next {
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
-  border-radius: 10%; /* Hacer los bordes redondeados */
-}
-
-.carousel-control-next-icon {
-  background-color: white; /* Color de las flechas (icono) */
-}
+  border-radius: 10%;
+ }
 
 /* Botones del carrusel */
 .carousel-control-prev,
 .carousel-control-next {
-  width: 10px; /* Ancho reducido */
-  height: 35px; /* Altura reducida */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-  border-radius: 10%; /* Forma circular */
-  display: flex;
-  justify-content: justify;
-  align-items: center;
+  height: 35px; 
+  background-color: rgba(109, 87, 235, 0.5); 
+  border-radius: 15%; 
 }
 
-/* Texto de la descripción, si lo agregas */
-.carousel-caption {
-  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  color: #fff; /* Color del texto */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra para legibilidad */
-  font-size: 1.2rem;
-}
-
-/* Estilo para la descripción en el carrusel */
-.carousel-caption {
-  position: absolute;
-  bottom: 20px; /* Mueve el texto hacia la parte inferior */
-  left: 50%; /* Centra el texto */
-  transform: translateX(-50%); /* Ajusta el texto para que esté perfectamente centrado */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-  color: white; /* Color del texto */
-  padding: 10px; /* Espaciado alrededor del texto */
-  border-radius: 10px; /* Bordes redondeados */
-  width: 100%; /* Asegura que el texto no se salga del contenedor */
-}
-
-/* Estilo para los títulos (h5) */
-.carousel-caption h5 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* Estilo para las descripciones (p) */
-.carousel-caption p {
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-/* En dispositivos más pequeños, el texto puede ajustarse */
-@media (max-width: 767px) {
-  .carousel-caption {
-    font-size: 0.9rem; /* Reduce el tamaño del texto en pantallas pequeñas */
-  }
-}
