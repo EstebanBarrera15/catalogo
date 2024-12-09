@@ -111,17 +111,23 @@ function createCardsFromExcel(sheet, data) {
       const cell = sheet[cellAddress];
       const cellValue = cell ? cell.v : '';
 
-      if ([4, 6].includes(colNum) && !isNaN(cellValue)) { 
-        const formattedPrice = parseFloat(cellValue).toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
-        pricesHtml += `<strong style="color: green;">${formattedPrice}</strong><br>`;
-      } else if (colNum === 5 && !isNaN(cellValue)) {
-        const ivaPercentage = (cellValue * 100).toFixed(0);
-        pricesHtml += `<strong style="color: orange;">IVA ${ivaPercentage}%</strong><br>`;
-      } else if (isBase64Image(cellValue)) {  
-        rowHtml += `<img src="${cellValue}" width="100" class="mb-2"/>`;
-      } else {
-        rowHtml += `${cellValue} `;
+      if (colNum === 4 && !isNaN(cellValue)) { 
+        unitPrice = parseFloat(cellValue);
+      } else if (colNum === 5 && !isNaN(cellValue)) { 
+        iva = parseFloat(cellValue);
+      } else if (colNum !== 4 && colNum !== 5) { 
+        if (isBase64Image(cellValue)) {
+          rowHtml += `<img src="${cellValue}" width="100" class="mb-2"/>`;
+        } else {
+          rowHtml += `${cellValue} `;
+        }
       }
+    }
+
+    if (unitPrice !== null && iva !== null) {
+      const finalPrice = unitPrice + (unitPrice * iva);
+      const formattedFinalPrice = finalPrice.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
+      pricesHtml += `<strong style="color: green;">${formattedFinalPrice}</strong><br>`;
     }
 
     pricesHtml += '</div>';
