@@ -6,7 +6,7 @@ function handleExcelLoad() {
   const sheetSelector = document.getElementById('sheetSelector');
   uploadExcel.style.display = 'inline-block';
  
-  const fileName = 'Datexce/Catálogo actualizado 12-24.xlsx';
+  const fileName = 'Datexce/RCatálogo actualizado 02 de dic 2024.xlsx';
   
   fetch(fileName)
     .then(response => { 
@@ -157,8 +157,6 @@ function createCardsFromExcel(sheet, data) {
     });
   });
 }
-
-
 
 window.onload = function() {
   handleExcelLoad();
